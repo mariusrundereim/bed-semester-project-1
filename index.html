@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Reception Management Dashboard</title>
+
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
+  <body>
+    <header class="container-xxl">
+      <div
+        class="d-flex justify-content-between align-content-center align-items-center align-items-md-start flex-column flex-md-row p-3 px-md-4 mb-3 border-bottom"
+      >
+        <div class="col-2 text-center">
+          <img
+            class="brandLogo"
+            src="./images/company-logo-color.png"
+            alt="Logo image"
+          />
+        </div>
+        <!-- Navbar -->
+        <nav class="col navbar navbar-expand-md navbar-light">
+          <ul class="nav-menu">
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Inventory</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#" onclick="return false"
+                    >Search</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" onclick="return false"
+                    >Add</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" onclick="return false"
+                    >Remove</a
+                  >
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Orders</a>
+              <ul class="dropdown-menu">
+                <li>
+                  <a class="dropdown-item" href="#" onclick="return false"
+                    >Search</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" onclick="return false"
+                    >Add</a
+                  >
+                </li>
+                <li>
+                  <a class="dropdown-item" href="#" onclick="return false"
+                    >Remove</a
+                  >
+                </li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+        <div id="clock" class="digital-clock"></div>
+      </div>
+    </header>
+
+    <main class="container-xxl">
+      <section>
+        <div>
+          <!-- Digital Clock -->
+
+          <h1 class="text-center">Reception Management Dashboard</h1>
+        </div>
+      </section>
+      <!-- Staff Members -->
+      <section>
+        <h2 class="text-center">Staff</h2>
+        <table class="table" id="staffTable">
+          <thead>
+            <tr>
+              <th scope="col">Picture</th>
+              <th scope="col">Name</th>
+              <th scope="col">Surname</th>
+              <th scope="col">Email address</th>
+              <th scope="col">Status</th>
+              <th scope="col">Out Time</th>
+              <th scope="col">Duration</th>
+              <th scope="col">Expected Return Time</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+      <!-- Schedule Delivery -->
+      <section>
+        <h2 class="text-center">Schedule Delivery</h2>
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row g-3">
+              <div class="col-md-2">
+                <select id="vehicleType" class="form-select">
+                  <option value="Motorcycle">Motorcycle</option>
+                  <option value="Car">Car</option>
+                </select>
+              </div>
+              <div class="col-md-2">
+                <input
+                  type="text"
+                  id="deliveryName"
+                  class="form-control"
+                  placeholder="Name"
+                />
+              </div>
+              <div class="col-md-2">
+                <input
+                  type="text"
+                  id="deliverySurname"
+                  class="form-control"
+                  placeholder="Surname"
+                />
+              </div>
+              <div class="col-md-2">
+                <input
+                  type="text"
+                  id="deliveryTelephone"
+                  class="form-control"
+                  placeholder="Telephone"
+                />
+              </div>
+              <div class="col-md-2">
+                <input
+                  type="text"
+                  id="deliveryAddress"
+                  class="form-control"
+                  placeholder="Delivery Address"
+                />
+              </div>
+              <div class="col-md-2">
+                <input type="time" id="returnTime" class="form-control" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-end mt-3">
+          <button id="addDeliveryBtn" class="btn btn-success">Add</button>
+        </div>
+      </section>
+      <!-- Delivery Board -->
+      <section>
+        <h2 class="text-center">Delivery Board</h2>
+        <table class="table" id="deliveryTable">
+          <thead>
+            <tr>
+              <th scope="col">Vehicle Type</th>
+              <th scope="col">Name</th>
+              <th scope="col">Surname</th>
+              <th scope="col">Telephone</th>
+              <th scope="col">Delivery Address</th>
+              <th scope="col">Return Time</th>
+              <th scope="col">Actions</th>
+            </tr>
+          </thead>
+          <tbody></tbody>
+        </table>
+      </section>
+    </main>
+    <!-- Toast -->
+    <div
+      id="toastContainer"
+      class="toast-container position-fixed bottom-0 end-0 p-3"
+    >
+      <div
+        id="lateNotificationToast"
+        class="toast"
+        role="alert"
+        aria-live="assertive"
+        aria-atomic="true"
+      >
+        <div class="toast-header">
+          <strong class="me-auto" id="toastTitle">Notification</strong>
+          <button
+            type="button"
+            class="btn-close"
+            data-bs-dismiss="toast"
+            aria-label="Close"
+          ></button>
+        </div>
+        <div class="toast-body" id="toastBody"></div>
+      </div>
+    </div>
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script type="module" src="./js/script.js"></script>
+  </body>
+</html>

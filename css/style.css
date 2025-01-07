@@ -1,0 +1,132 @@
+:root {
+  --brand-text: #212529;
+  --brand-menu: #0e8ea8;
+  --brand-submenu: #83d1e1;
+  --brand-button: #198754;
+  --brand-white: #fff;
+}
+
+body {
+  font-family: "Calibri", sans-serif;
+  color: var(--brand-text);
+}
+
+/* Logo on Header */
+.brandLogo {
+  width: 150px;
+  height: auto;
+  object-fit: cover;
+}
+
+/* Navigation */
+
+.nav-menu {
+  display: flex;
+  list-style: none;
+}
+
+.nav-item {
+  position: relative;
+  margin-right: 20px;
+}
+
+.nav-link {
+  text-decoration: none;
+  font-family: "Calibri", sans-serif;
+  padding: 5px 10px;
+}
+
+.nav-link.active {
+  background-color: var(--brand-submenu);
+  color: var(--brand-text);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: var(--brand-submenu);
+  padding: 8px 0;
+  margin: 0;
+  list-style: none;
+  min-width: 120px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.nav-item:hover .dropdown-menu {
+  display: block;
+}
+
+.dropdown-item {
+  display: block;
+  padding: 5px 15px;
+  color: var(--brand-text);
+  text-decoration: none;
+  font-family: "Calibri", sans-serif;
+}
+
+.dropdown-item:hover {
+  background-color: var(--brand-menu);
+  color: var(--brand-white);
+}
+/* Table styling */
+.table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table thead {
+  font-family: "Consolas", monospace;
+  border: thin solid var(--brand-text);
+  background-color: var(--brand-menu);
+  color: var(--brand-white);
+}
+
+.table tbody td {
+  font-family: "Calibri", sans-serif;
+  background-color: var(--brand-submenu);
+  color: var(--brand-text);
+}
+
+/* Button styling */
+.btn-positive {
+  font-family: "Consolas", monospace;
+  background-color: var(--brand-button);
+  color: var(--brand-white);
+  border: none;
+}
+
+.btn-positive:hover {
+  background-color: #146c43;
+  color: var(--brand-white);
+}
+
+.btn-danger {
+  font-family: "Consolas", monospace;
+  background-color: #dc3545;
+  color: var(--brand-white);
+  border: none;
+}
+
+.btn-danger:hover {
+  background-color: #b52937;
+  color: var(--brand-white);
+}
+
+/* Icons */
+
+.bi {
+  margin-right: 0.5rem;
+  font-size: 1.4rem;
+  vertical-align: middle;
+}
+
+/* Digital Clock */
+
+.digital-clock {
+  font-size: 1.4rem;
+  padding: 10px;
+  border-radius: 5px;
+  text-align: center;
+}
