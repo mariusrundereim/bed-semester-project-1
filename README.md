@@ -1,5 +1,7 @@
 # Reception Management Dashboard
 
+![Cover photo](/images/cover_photo.png)
+
 A web-based dashboard application designed for WeDeliverTECH™'s reception staff to manage staff out-of-office tracking and delivery driver monitoring. The system provides real-time updates and notifications to ensure efficient office and delivery management.
 
 ## Features
@@ -41,10 +43,9 @@ A web-based dashboard application designed for WeDeliverTECH™'s reception staf
 
 - RandomUser API (for demo staff data)
 - Bootstrap Icons
-- Google Fonts (if specified in brand guide)
+- Google Fonts
 
 ### Development Approach
 
 - Object-Oriented Programming (OOP)
 - Event-Driven Architecture
-- Local Storage for data persistence
